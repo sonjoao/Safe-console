@@ -49,7 +49,7 @@ int main(void) {
     int deslocamento;
     char chave;
 
-    printf("=== Teste: Cifra de Cesar ===\n");
+    printf("### Teste: Cifra de Cesar ###\n");
     printf("Digite um texto: ");
     fgets(texto, TAM_BUFFER, stdin);
     texto[strcspn(texto, "\n")] = '\0';
@@ -66,12 +66,12 @@ int main(void) {
     printf("Descifrado: %s  (deve voltar a ser igual ao original: %s)\n\n",
            texto, copia);
 
-    printf("=== Teste: Cifra XOR ===\n");
+    printf("### Teste: Cifra XOR ###\n");
     printf("Digite um texto: ");
     fgets(texto, TAM_BUFFER, stdin);
     texto[strcspn(texto, "\n")] = '\0';
 
-    printf("Digite uma chave (1 caractere): ");
+    printf("Digite uma chave (1 caracter): ");
     scanf(" %c", &chave);
 
     cifrar_xor(texto, chave);
