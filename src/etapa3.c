@@ -14,7 +14,7 @@ int total_logs = 0;
 
 void registrar_log(const char *conteudo, const char *algoritmo) {
     if (total_logs >= MAX_LOGS) {
-        printf("Limite de logs atingido. Log nao registrado.\n");
+        printf("Topo de logs atingido. Log nao registrado.\n");
         return;
     }
     strncpy(historico[total_logs], conteudo, TAM_BUFFER - 1);
@@ -39,7 +39,7 @@ void buscar_logs(const char *termo) {
     }
 
     if (encontrados == 0) {
-        printf("Nenhum log encontrado contendo \"%s\".\n", termo);
+        printf("Não há logs contendo \"%s\".\n", termo);
     }
 }
 
@@ -52,7 +52,7 @@ void relatorio_auditoria(void) {
         return;
     }
 
-    printf("\n===================== RELATORIO DE AUDITORIA =====================\n");
+    printf("\n##################### RELATORIO DE AUDITORIA #####################\n");
     printf("%-5s %-12s %-10s %s\n", "ID", "ALGORITMO", "TAMANHO", "PAYLOAD");
     printf("--------------------------------------------------------------------\n");
 
@@ -63,21 +63,21 @@ void relatorio_auditoria(void) {
                (unsigned long) strlen(historico[i]),
                historico[i]);
     }
-    printf("====================================================================\n\n");
+    printf("#######################################################################\n\n");
 }
 
 int main(void) {
     char termo[TAM_BUFFER];
 
-    printf("=== Teste: registrando alguns logs de exemplo ===\n");
+    printf("### Teste: registrando alguns logs de exemplo ###\n");
     registrar_log("*******8901", "MASCARA");
     registrar_log("Khoor Pxqgr", "CESAR");
     registrar_log("38 0E 0C 19", "XOR");
-    printf("3 logs de exemplo registrados.\n");
+    printf("3 logs de exemplo (registro log).\n");
 
     relatorio_auditoria();
 
-    printf("=== Teste: buscar_logs() ===\n");
+    printf("### Teste: buscar_logs() ###\n");
     printf("Digite um termo para buscar (ex: Khoor): ");
     fgets(termo, TAM_BUFFER, stdin);
     termo[strcspn(termo, "\n")] = '\0';
