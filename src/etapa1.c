@@ -57,13 +57,13 @@ int main(void) {
     char mascarado[TAM_BUFFER];
     char senha[TAM_BUFFER];
 
-    printf("=== Teste: mascarar_dados() ===\n");
+    printf("### Teste: mascarar_dados() ###\n");
     printf("Digite um dado sensivel (ex: CPF, cartao): ");
     ler_entrada(entrada, TAM_BUFFER);
     mascarar_dados(entrada, mascarado);
     printf("Resultado: %s\n\n", mascarado);
 
-    printf("=== Teste: validar_senha() ===\n");
+    printf("### Teste: validar_senha() ###\n");
     printf("Digite uma senha: ");
     ler_entrada(senha, TAM_BUFFER);
     if (validar_senha(senha)) {
